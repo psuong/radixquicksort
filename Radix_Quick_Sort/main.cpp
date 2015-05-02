@@ -8,7 +8,7 @@ using namespace std;
 
 int main()
 {
-	const int dataSize = 26;
+	const int dataSize = 51;
 	int data[dataSize];
 	int radixSteps;
 	int quickSteps;
@@ -25,7 +25,7 @@ int main()
 
 	dataFile.open("precipitation.txt");
 	int i = 0;
-	while (getline(dataFile, line) && i < 26)
+	while (getline(dataFile, line) && i < dataSize)
 	{
 		data[i] = stoi(line);
 		i++;
