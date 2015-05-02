@@ -13,6 +13,12 @@ int main()
 	int radixSteps;
 	int quickSteps;
 
+	clock_t t;
+	clock_t t2;
+
+	double diff;
+	double diff2;
+
 	//File IO
 	string line;
 	ifstream dataFile;
@@ -32,17 +38,17 @@ int main()
 	testRadix.copyArray(dataSize, data);
 	testRadix.sortRadix(dataSize);
 	testRadix.printArry(dataSize);
-	radixSteps = testRadix.getSteps();
-
-	cout << "Steps: " << radixSteps << endl;
+	diff = clock() - t;
+	cout << "Radix Sort Time: " << diff << endl;
 
 	//testing Quick Sort
+	t2 = clock();
 	quickSort testQuick(dataSize);
 	testQuick.copyArry(dataSize, data);
 	testQuick.sortQuick(0, dataSize - 1);
 	testQuick.printArry(dataSize);
-	quickSteps = testQuick.getSteps();
-	cout << "Steps: " << quickSteps << endl;
+	diff2 = clock() - t2;
+	cout << "Quick Sort Time: " << diff2 << endl;
 
 
 	return 0;

@@ -8,7 +8,6 @@ public:
 	quickSort(int size)
 	{
 		dataSet = new int[size];
-		steps = 0;
 	}
 
 	void copyArry(int size, int arry[]);
@@ -17,11 +16,8 @@ public:
 
 	void sortQuick(int l, int r);
 
-	int getSteps() { return steps; }
-
 private:
 	int *dataSet;
-	int steps;
 };
 
 #endif // !QUICKSORT_H

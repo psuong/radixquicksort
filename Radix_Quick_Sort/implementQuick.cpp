@@ -26,16 +26,16 @@ void quickSort::sortQuick(int l , int r)
 
 	while (left <= right)
 	{
-		steps++;
+
 		while (dataSet[left] < pivot)
 		{
 			left++;
-			steps++;
+
 		}
 		while (dataSet[right] > pivot)
 		{
 			right--;
-			steps++;
+
 		}
 		if (left <= right)
 		{
@@ -44,18 +44,15 @@ void quickSort::sortQuick(int l , int r)
 			dataSet[right] = temp;
 			left++;
 			right--;
-			steps += 4;
 		}
 	}
 
 	if (l < right)
 	{
-		steps++;
 		sortQuick(l, right);
 	}
 	if (left < r)
 	{
-		steps++;
 		sortQuick(left, r);
 	}
 }
