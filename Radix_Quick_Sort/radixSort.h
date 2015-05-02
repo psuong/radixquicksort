@@ -1,3 +1,6 @@
+#ifndef RADIXSORT_H
+#define RADIXSORT_H
+
 #include <iostream>
 
 class radixSort
@@ -23,3 +26,5 @@ private:
 	int getMax(int size); //gets the max value of the array
 	void countSort(int size, int exp); //private function, radix sort uses count sort
 };
+
+#endif // !RADIXSORT_H

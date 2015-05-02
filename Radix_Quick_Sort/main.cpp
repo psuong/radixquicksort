@@ -1,8 +1,9 @@
 //http://www.currentresults.com/Weather/US/average-annual-precipitation-by-city.php
-#include <iostream>
 #include <fstream>
 #include <string>
+#include <time.h>
 #include "radixSort.h"
+#include "quickSort.h"
 using namespace std;
 
 int main()
@@ -10,10 +11,15 @@ int main()
 	const int dataSize = 26;
 	int data[dataSize];
 	int radixSteps;
+	int quickSteps;
+
+	//time variable - used for each algorithm
+	clock_t t;
+	clock_t t2;
+
 	//File IO
 	string line;
 	ifstream dataFile;
-
 
 	dataFile.open("precipitation.txt");
 	int i = 0;
@@ -22,13 +28,26 @@ int main()
 		data[i] = stoi(line);
 		i++;
 	}
-	
+	dataFile.close();
+
+	//testing Radix Sort
+	t = clock();
 	radixSort testRadix(dataSize);
 	testRadix.copyArray(dataSize, data);
 	testRadix.sortRadix(dataSize);
 	testRadix.printArry(dataSize);
 	radixSteps = testRadix.getSteps();
-	cout << radixSteps << endl;
+
+	cout << "Steps: " << radixSteps << endl;
+
+	//testing Quick Sort
+	quickSort testQuick(dataSize);
+	testQuick.copyArry(dataSize, data);
+	testQuick.sortQuick(0, dataSize - 1);
+	testQuick.printArry(dataSize);
+	quickSteps = testQuick.getSteps();
+	cout << "Steps: " << quickSteps << endl;
+
 
 	return 0;
 }

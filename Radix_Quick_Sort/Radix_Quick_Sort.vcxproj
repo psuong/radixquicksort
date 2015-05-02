@@ -65,10 +65,12 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="implementQuick.cpp" />
     <ClCompile Include="implementRadix.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="quickSort.h" />
     <ClInclude Include="radixSort.h" />
   </ItemGroup>
   <ItemGroup>
