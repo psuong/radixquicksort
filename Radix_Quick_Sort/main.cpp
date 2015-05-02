@@ -13,10 +13,6 @@ int main()
 	int radixSteps;
 	int quickSteps;
 
-	//time variable - used for each algorithm
-	clock_t t;
-	clock_t t2;
-
 	//File IO
 	string line;
 	ifstream dataFile;
